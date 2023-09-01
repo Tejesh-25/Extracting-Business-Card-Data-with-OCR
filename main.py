@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 connect=mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="Guvi12345",
+                password="########",
                 auth_plugin='mysql_native_password',
                 database="bizcards")
 mycursor=connect.cursor()
@@ -131,12 +131,12 @@ if choice=="Add":
                 connect=mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="Guvi12345",
+                password="#########",
                 auth_plugin='mysql_native_password',
                 database="bizcards")
                 mycursor=connect.cursor()
                 mycursor.execute('create database if not exists bizcards')
-                engine=create_engine('mysql+mysqlconnector://root:Guvi12345@localhost/bizcards',echo=False)
+                engine=create_engine('mysql+mysqlconnector://root:#########@localhost/bizcards',echo=False)
                 df.to_sql('business_cards',engine,if_exists='append',index=False)
                 st.balloons()
                 st.success("sucessfuly stored in Mysql")
